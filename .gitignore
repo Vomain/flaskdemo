@@ -1,0 +1,13 @@
+.pyc
+.idea/
+application/__init__.pyc
+application/forms.pyc
+application/models.pyc
+application/test.db
+config.pyc
+flask-aws/
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
