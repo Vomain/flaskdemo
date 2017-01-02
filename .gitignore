@@ -3,7 +3,6 @@
 application/__init__.pyc
 application/forms.pyc
 application/models.pyc
-application/test.db
 config.pyc
 flask-aws/
 
