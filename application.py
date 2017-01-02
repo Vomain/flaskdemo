@@ -43,9 +43,23 @@ def index():
             db.session.close()
         except:
             db.session.rollback()
-        return render_template('results.html', results=query_db, num_return=num_return)                
+        return render_template('results.html', results=query_db, num_return=num_return)
     
     return render_template('index.html', form1=form1, form2=form2)
+
+
+@application.route('/retrieve', methods=['GET'])
+def retrieve():
+    if request.method == 'GET':
+        try:
+            num_return = 1
+            query_db = Data.query.order_by(Data.id.desc()).limit(num_return)
+            for q in query_db:
+                print(q.notes)
+            db.session.close()
+        except:
+            db.session.rollback()
+        return render_template('results.html', results=query_db, num_return=num_return)
 
 if __name__ == '__main__':
     application.run(host='0.0.0.0')
